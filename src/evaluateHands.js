@@ -1,9 +1,25 @@
 
 
-function evaluateHands(hands) {
+function evaluateBrelan(hand) {
     let count = 0;
+    for (let i = 0; i < hand.length; i++) {
+        for (let j = i + 1; j < hand.length; j++) {
+            if (hand[i] == hand[j]) {
+                count++;
+            }
+        }
+        if (count == 3) {
+            return 30;
+        }
+    }
+    return 0;
+}
 
-    if (hands[0][0] == 2 && hands[0][1] == 2 && hands[0][2] == 2) {
+function evaluateHands(hands) {
+
+
+    let checkScore = evaluateBrelan(hands[0]);
+    if (checkScore == 30) {
         return 30;
     }
     return 40;
