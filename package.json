@@ -1,0 +1,23 @@
+{
+  "name": "cc1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adjiriracim/CC-clean-code.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adjiriracim/CC-clean-code/issues"
+  },
+  "homepage": "https://github.com/adjiriracim/CC-clean-code#readme",
+  "dependencies": {
+    "jest": "^30.5.2"
+  }
+}
