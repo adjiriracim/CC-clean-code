@@ -31,4 +31,13 @@ describe("evaluateHands", () => {
         ];
         expect(evaluateHands(hand)).toBe(40);
     });
+
+    test("should compare between different hands and detect Caree", () => {
+        const hand = [
+            [1, 2, 3, 4, 5],
+            [2, 2, 2, 4, 5],
+            [2, 2, 2, 4, 2]
+        ];
+        expect(evaluateHands(hand)).toBe(60);
+    });
 });

@@ -15,6 +15,23 @@ function evaluateBrelan(hand) {
     return 0;
 }
 
+function evaluateCaree(hand) {
+    let count = 0;
+    for (let i = 0; i < hand.length; i++) {
+        count = 0
+        count++;
+        for (let j = i + 1; j < hand.length; j++) {
+            if (hand[i] == hand[j]) {
+                count++;
+            }
+        }
+        if (count == 4) {
+            return 60;
+        }
+    }
+    return 0;
+}
+
 function evaluateSuite(hand) {
 
     hand.map(value => value).sort((a, b) => b - a);
@@ -33,6 +50,9 @@ function evaluateScore(hands) {
         if (result > max)
             max = result
         result = evaluateBrelan(hands[i])
+        if (result > max)
+            max = result
+        result = evaluateCaree(hands[i])
         if (result > max)
             max = result
     }
