@@ -15,4 +15,12 @@ describe("evaluateHands", () => {
         ];
         expect(evaluateHands(hand)).toBe(30);
     });
+
+    test("should compare between different hands", () => {
+        const hand = [
+            [2, 2, 2, 5, 6],
+            [3, 2, 1, 4, 5]
+        ];
+        expect(evaluateHands(hand)).toBe(30);
+    });
 });
