@@ -23,4 +23,12 @@ describe("evaluateHands", () => {
         ];
         expect(evaluateHands(hand)).toBe(30);
     });
+
+    test("should compare between different hands and detect suite", () => {
+        const hand = [
+            [1, 2, 3, 4, 5],
+            [2, 2, 2, 4, 5]
+        ];
+        expect(evaluateHands(hand)).toBe(40);
+    });
 });

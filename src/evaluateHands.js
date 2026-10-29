@@ -15,27 +15,35 @@ function evaluateBrelan(hand) {
     return 0;
 }
 
-function evaluateSuite(hands) {
+function evaluateSuite(hand) {
 
-    let firstHand = evaluateBrelan(hands[0])
-    if (hands.length == 1) {
-        return firstHand;
+    hand.map(value => value).sort((a, b) => b - a);
+    if (hand[0] < hand[1] && hand[1] < hand[2] && hand[2] < hand[3] && hand[3] < hand[4]) {
+        return 40;
     }
-    let secondeHand = evaluateBrelan(hands[1])
+    return 0;
+}
 
-    if (firstHand > secondeHand)
-        return firstHand
-    else
-        return secondeHand
+function evaluateScore(hands) {
+
+    let max = 0
+
+    for (let i = 0; i < hands.length; i++) {
+        let result = evaluateSuite(hands[i])
+        if (result > max)
+            max = result
+        result = evaluateBrelan(hands[i])
+        if (result > max)
+            max = result
+    }
+    return max;
 }
 
 function evaluateHands(hands) {
 
-    let checkScore = evaluateSuite(hands);
-    if (checkScore == 30) {
-        return 30;
-    }
-    return 40;
+    let checkScore = evaluateScore(hands);
+
+    return checkScore;
 }
 
 module.exports = { evaluateHands };
